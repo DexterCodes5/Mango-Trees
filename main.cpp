@@ -20,8 +20,8 @@ void drawLines(std::vector<std::vector<char>> &arr, int n, int vertical, int hor
         }
         arr.at(i).insert(it,'|');
     }
-    
-    std::vector<char> v{'-','-','-','-','-','-','-'};
+    std::vector<char> v{};
+    for (int i = 0; i <= n; i++) v.push_back('-');
     std::vector<std::vector<char>>::iterator it = arr.begin();
     for (int i = 0; i < horizontal; i++) {
         it++;
