@@ -85,8 +85,8 @@ int mangoTrees(std::vector<std::vector<char>> &arr, int n) {
     std::vector<std::vector<int>> matrix = auxillaryMatrix(arr);
     int max_trees{};
     
-    for (int i = 2; i < n; i++) {
-        for (int j = 1; j < n; j++) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
             // m[x,y] = m[x-1][y] + m[x][j-1] - m[i-1],[j-1] formula 0(1)
             int quadrant1 = matrix[i][j];
             int quadrant2 = matrix[i][n-1] - quadrant1;
