@@ -87,7 +87,7 @@ int mangoTrees(std::vector<std::vector<char>> &arr, int n) {
     
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            // m[x,y] = m[x-1][y] + m[x][j-1] - m[i-1],[j-1] formula 0(1)
+            // m[x,y] = 1 + m[x-1][y] + m[x][j-1] - m[i-1],[j-1] if tree at (x,y), else 1 will be 0. 0(1) formula
             int quadrant1 = matrix[i][j];
             int quadrant2 = matrix[i][n-1] - quadrant1;
             int quadrant3 = matrix[n-1][j] - quadrant1;
