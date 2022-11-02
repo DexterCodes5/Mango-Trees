@@ -43,7 +43,7 @@ int smallestField(int q1, int q2, int q3, int q4) {
 }
 
 // 0(N^2)
-std::vector<std::vector<int>> auxillaryMatrix(std::vector<std::vector<char>> arr) {
+std::vector<std::vector<int>> auxiliaryMatrix(std::vector<std::vector<char>> arr) {
     std::vector<std::vector<int>> mat(arr.size());
     
     for (int i = 0; i < arr.size(); i++) {
@@ -82,12 +82,12 @@ std::vector<std::vector<int>> auxillaryMatrix(std::vector<std::vector<char>> arr
 
 // 0(N^2)
 int mangoTrees(std::vector<std::vector<char>> &arr, int n) {
-    std::vector<std::vector<int>> matrix = auxillaryMatrix(arr);
+    std::vector<std::vector<int>> matrix = auxiliaryMatrix(arr);
     int max_trees{};
     
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            // m[x,y] = 1 + m[x-1][y] + m[x][j-1] - m[i-1],[j-1] if tree at (x,y), else 1 will be 0. 0(1) formula
+            // m[x,y] = 1 + m[x-1][y] + m[x][j-1] - m[i-1],[j-1] if tree at (x,y), else 1 will be 0 formula 0(1)
             int quadrant1 = matrix[i][j];
             int quadrant2 = matrix[i][n-1] - quadrant1;
             int quadrant3 = matrix[n-1][j] - quadrant1;
